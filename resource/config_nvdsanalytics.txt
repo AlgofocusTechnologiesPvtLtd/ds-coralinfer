@@ -1,0 +1,67 @@
+# Copyright (c) 2020 NVIDIA Corporation.  All rights reserved.
+#
+# NVIDIA Corporation and its licensors retain all intellectual property
+# and proprietary rights in and to this software, related documentation
+# and any modifications thereto.  Any use, reproduction, disclosure or
+# distribution of this software and related documentation without an express
+# license agreement from NVIDIA Corporation is strictly prohibited.
+
+# The values in the config file are overridden by values set through GObject
+# properties.
+
+[property]
+#Width height used for configuration to which below configs are configured
+enable=1
+config-width=1920
+config-height=1080
+
+## Per stream configuration
+[roi-filtering-stream-0]
+#enable or disable following feature
+enable=1
+#ROI to filter select objects, and remove from meta data
+#roi-EXIT=295;643;579;634;642;913;56;828
+#remove objects in the ROI
+roi-RF=900;503;1679;600;1542;1113;200;578
+inverse-roi=0
+class-id=0
+
+
+
+## Per stream configuration
+[roi-filtering-stream-2]
+#enable or disable following feature
+enable=0
+#ROI to filter select objects, and remove from meta data
+roi-RF=295;643;579;634;642;913;56;828
+#remove objects in the ROI
+inverse-roi=1
+class-id=0
+
+[overcrowding-stream-1]
+enable=0
+roi-OC=295;643;579;634;642;913;56;828
+#no of objects that will trigger OC
+object-threshold=3
+class-id=-1
+
+[line-crossing-stream-0]
+enable=1
+#Label;direction;lc
+#line-crossing-Entry=772;799;819;946;623;952;1061;926
+#line-crossing-Entry=1072;911;1143;1058;944;1020;1297;1020;
+#line-crossing-Exit=900;350;920;450;800;400;1150;400
+#line-crossing-Exit=490;350;420;450;300;400;850;400
+#line-crossing-Exit=1250;650;1450;850;1000;800;1700;800 # norma_traffic
+#line-crossing-Exit=1250;650;1050;850;500;700;1400;950
+line-crossing-Exit=1250;650;1050;950;200;600;1500;950 # sampe_day
+class-id=0
+
+[direction-detection-stream-0]
+enable=0
+#Label;direction;
+direction-South=284;840;360;662;
+direction-North=1106;622;1312;701;
+class-id=0
+
+

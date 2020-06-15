@@ -1,0 +1,2 @@
+[KLT_CONFIG]
+klt-threshold=0.3

@@ -1,0 +1,38 @@
+[coral-infer]
+enable=1
+processing-width=300
+processing-height=300
+threshold=0.4
+label-path=/home/stackfusion/pipline/coral_plugin/resource/coco_labels.txt
+#model-path=/home/stackfusion/pipline/coral_plugin/resource/MobSsdV2_model_edgetpu.tflite
+model-path=/home/stackfusion/Downloads/MobSsdV2_up_edgetpu.tflite
+detected-min-w = 1
+detected-min-h = 1
+detected-max-h = 3000
+detected-max-w = 3000
+eps=0.4
+group-threshold=1
+
+[class-attrs-1]
+enable=1
+threshold=0.4
+#detected-min-w = 5
+#detected-min-h = 1
+#detected-max-h = 70
+#detected-max-w = 50
+detected-min-w = 0
+detected-min-h = 0
+detected-max-h = 1500
+detected-max-w = 1500
+
+[class-attrs-0]
+enable=1
+threshold=0.4
+#detected-min-w = 5
+#detected-min-h = 1
+#detected-max-h = 70
+#detected-max-w = 50
+detected-min-w = 0
+detected-min-h = 0
+detected-max-h = 1500
+detected-max-w = 1500
