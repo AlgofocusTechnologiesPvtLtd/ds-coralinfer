@@ -1,6 +1,7 @@
 # Description
 
 This plugin is performs object detetion using edgetpu on jetson nano.
+
 --------------------------------------------------------------------------------
 ## Pre-requisites
 - GStreamer-1.0 Development package
@@ -8,6 +9,16 @@ This plugin is performs object detetion using edgetpu on jetson nano.
 - OpenCV Development package
 - Jetpack 4.4
 - Deepstream 5.0
+
+# Installation
+1. Clone the Git Repository directory
+2. Run
+
+    ```sudo make install```
+
+3. Verify Installation
+
+    ``` gst-inspect-1.0 coralinfer ```
 
 --------------------------------------------------------------------------------
 # Usage
@@ -22,6 +33,12 @@ This plugin is performs object detetion using edgetpu on jetson nano.
     gst-launch-1.0 uridecodebin uri=file:///home/stackfusion/pipline/sample_short.mp4 ! m.sink_0 nvstreammux name=m batch-size=1 width=1280 height=720 ! coralinfer config-file-path="resource/sample_config.txt" ! nvvideoconvert ! nvtracker tracker-width=640 tracker-height=320 ll-lib-file=/opt/nvidia/deepstream/deepstream-5.0/lib/libnvds_mot_klt.so ll-config-file=resource/tracker_config_1.yml ! nvdsosd ! nvvideoconvert ! fpsdisplaysink name=fpssink text-overlay=true video-sink=xvimagesink sync=0
 
 ### Results
+
+**Device** : Jetson Nano (Developer kit version)
+
+**Jetpack** : 4.4DP
+
+**Deepstream** : 5.0
 
 |            |        |
 |------------|--------|
