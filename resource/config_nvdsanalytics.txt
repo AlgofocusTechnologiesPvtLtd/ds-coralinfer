@@ -7,20 +7,7 @@ enable=1
 config-width=1920
 config-height=1080
 
-## Per stream configuration
-[roi-filtering-stream-0]
-#enable or disable following feature
-enable=1
-#ROI to filter select objects, and remove from meta data
-#roi-EXIT=295;643;579;634;642;913;56;828
-#remove objects in the ROI
-roi-RF=900;503;1679;600;1542;1113;200;578
-inverse-roi=0
-class-id=0
-
 [line-crossing-stream-0]
 enable=1
-#line-crossing-Exit=1250;650;1450;850;1000;800;1700;800 # norma_traffic
-#line-crossing-Exit=1250;650;1050;850;500;700;1400;950
-line-crossing-Exit=1250;650;1050;950;200;600;1500;950 # sampe_day
+line-crossing-Exit=1300;800;1050;950;200;600;1350;1020 # sampe_day
 class-id=0

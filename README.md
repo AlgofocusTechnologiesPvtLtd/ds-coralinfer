@@ -1,7 +1,8 @@
-# Description:
-    This plugin is performs object detetion using edgetpu on jetson nano.
+# Description
+
+This plugin is performs object detetion using edgetpu on jetson nano.
 --------------------------------------------------------------------------------
-## Pre-requisites:
+## Pre-requisites
 - GStreamer-1.0 Development package
 - GStreamer-1.0 Base Plugins Development package
 - OpenCV Development package
@@ -9,16 +10,12 @@
 - Deepstream 5.0
 
 --------------------------------------------------------------------------------
-# Usage:
+# Usage
     gst-launch-1.0 uridecodebin uri=file://<video_path> ! m.sink_0 nvstreammux name=m batch-size=1 width=1280 height=720 ! coralinfer config-file-path="<config_file_path>" ! nvvideoconvert ! nvtracker tracker-width=640 tracker-height=320 ll-lib-file=/opt/nvidia/deepstream/deepstream-5.0/lib/libnvds_mot_klt.so ll-config-file=<tracker_config_path> ! nvdsosd ! nvvideoconvert ! fpsdisplaysink name=fpssink text-overlay=true video-sink=xvimagesink sync=0
 
 ### Example:
 
     gst-launch-1.0 uridecodebin uri=file:///home/stackfusion/pipline/sample_short.mp4 ! m.sink_0 nvstreammux name=m batch-size=1 width=1280 height=720 ! coralinfer config-file-path=resource/sample_config.txt ! nvvideoconvert ! nvtracker tracker-width=640 tracker-height=320 ll-lib-file=/opt/nvidia/deepstream/deepstream-5.0/lib/libnvds_mot_klt.so ll-config-file=/resource/tracker_config_1.yml ! nvdsosd ! nvvideoconvert ! fpsdisplaysink name=fpssink text-overlay=true video-sink=xvimagesink sync=0
-
- nvtracker tracker-width=640 tracker-height=352 ll-lib-file=/opt/nvidia/deepstream/deepstream-5.0/lib/libnvds_nvdcf.so ll-config-file=/home/stackfusion/pipline/coral_plugin/resource/tracker_config.yml    
- gst-launch-1.0 uridecodebin uri=file:///home/stackfusion/pipline/sample_day.mp4 ! m.sink_0 nvstreammux name=m batch-size=1 width=1280 height=720 ! coralinfer config-file-path="/home/stackfusion/pipline/coral_plugin/resource/sample_config.txt" ! nvvideoconvert ! nvtracker tracker-width=640 tracker-height=320 ll-lib-file=/opt/nvidia/deepstream/deepstream-5.0/lib/libnvds_mot_klt.so ll-config-file=/home/stackfusion/pipline/coral_plugin/resource/tracker_config_1.yml !  nvdsanalytics config-file=/home/stackfusion/pipline/coral_plugin/resource/config_nvdsanalytics.txt ! nvdsosd ! nvvideoconvert ! fpsdisplaysink name=fpssink text-overlay=true video-sink=xvimagesink sync=0
-
 
 # Running a Benchmark
 
@@ -26,11 +23,11 @@
 
 ### Results
 
-|            |        |   |   |   |
-|------------|--------|---|---|---|
-| Frame rate | 54 fps |   |   |   |
-| Ram        | 71Mb |   |   |   |
-| Cpu        |  30% |   |   |   |
+|            |        |
+|------------|--------|
+| Frame rate | 54 fps |
+| Ram Usage  | 71Mb |
+| Cpu Usage  |  30% |
 
 --------------------------------------------------------------------------------
 # Properties:
@@ -97,5 +94,6 @@
 
 # Sample
 
-## Vehicle couting sampel
-    
+## Vehicle counting sample pipeline
+
+    gst-launch-1.0 uridecodebin uri=file:///home/stackfusion/pipline/sample_short.mp4 ! m.sink_0 nvstreammux name=m batch-size=1 width=1280 height=720 ! coralinfer config-file-path="resource/sample_config.txt" ! nvvideoconvert ! nvtracker tracker-width=640 tracker-height=320 ll-lib-file=/opt/nvidia/deepstream/deepstream-5.0/lib/libnvds_mot_klt.so ll-config-file=resource/tracker_config_1.yml ! nvdsosd ! nvvideoconvert ! fpsdisplaysink name=fpssink text-overlay=true video-sink=xvimagesink sync=0
