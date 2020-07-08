@@ -124,6 +124,7 @@ This plugin is performs object detetion using edgetpu on jetson nano.
 
 #### Memory Usage with Coral Plugin
 ![MemoryUsageWithCoralPlugin](MemoryUsageWithCoralPlugin.png)
+![Link to video ](https://youtu.be/MHJCetQDi8s)
 
 #### Memory Usage without Coral Plugin
 ![MemoryUsageWithoutCoralPlugin](MemoryUsageWithoutCoralPlugin.png)
