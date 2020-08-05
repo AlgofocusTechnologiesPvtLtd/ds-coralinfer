@@ -239,7 +239,13 @@ This plugin is performs object detetion using edgetpu on jetson nano.
 
 #### Memory Usage with Coral Plugin
 ![MemoryUsageWithCoralPlugin](MemoryUsageWithCoralPlugin.png)
-![Link to video ](https://youtu.be/MHJCetQDi8s)
+
+
+##### Vehicle Counting and Classification using Edge AI device in realtime with Coral TPU + Jetson Nano
+[![Vehicle Counting and Classification using Edge AI device in realtime with Coral TPU + Jetson Nano](https://img.youtube.com/vi/q2l1ImkkSLY/0.jpg)](https://www.youtube.com/watch?v=q2l1ImkkSLY)
 
 #### Memory Usage without Coral Plugin
 ![MemoryUsageWithoutCoralPlugin](MemoryUsageWithoutCoralPlugin.png)
+
+#### Vehicle Counting and Classification using Edge AI device in realtime
+[![Vehicle Counting and Classification using Edge AI device in realtime](https://img.youtube.com/vi/MHJCetQDi8s/0.jpg)](https://www.youtube.com/watch?v=MHJCetQDi8s)
